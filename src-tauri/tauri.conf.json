@@ -12,7 +12,9 @@
   },
   "tauri": {
     "allowlist": {
-      "all": false,
+      "window": {
+        "all": true
+      },
       "shell": {
         "all": false,
         "open": true
@@ -33,7 +35,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.trustapp.verify",
       "longDescription": "",
       "macOS": {
         "entitlements": null,

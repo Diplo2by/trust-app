@@ -4,13 +4,20 @@
 )]
 
 #[tauri::command]
-fn greet(name: &str) -> String {
-    format!("Hello, {}! You've been greeted from Rust!", name)
+fn hello_fn(name:String)->String{
+    format!("Console Log")
 }
+
+#[tauri::command]
+fn call_rust() {
+  println!("Hey JS"); 
+}
+
+
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet])
+        .invoke_handler(tauri::generate_handler![hello_fn,call_rust])
         .run(tauri::generate_context!())
-        .expect("error while running tauri application");
+        .expect("Couldn't run :/")
 }
