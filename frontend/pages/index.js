@@ -1,7 +1,12 @@
 import Head from "next/head";
 import Main from "../components/Main";
 import Navbar from "../components/Navbar";
-import Rust from "../components/Rust";
+import dynamic from 'next/dynamic'
+
+const Rust_button = dynamic(() => import('../components/Rust'), {
+  ssr: false,
+})
+
 
 
 
@@ -13,7 +18,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <Main />
-      <Rust/>
+      <Rust_button/>
     </div>
   );
 }
